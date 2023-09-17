@@ -1,3 +1,6 @@
+
+package org.agoncal.quarkus.panache.repository;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -18,7 +21,7 @@ public class CustomerRepositoryTest {
     @TestTransaction
     public void shouldCreateAndFindAnArtist() {
         Customer customer = new Customer("name", "surname", "mail@email.com");
-
+        System.out.println(customer);
         repository.persist(customer);
         assertNotNull(customer.getId());
 

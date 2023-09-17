@@ -3,9 +3,7 @@ package org.agoncal.quarkus.panache.repository;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import java.sql.SQLException;
-
-import org.agoncal.qurkus.panache.model.Publisher;
+import org.agoncal.quarkus.panache.model.Publisher;
 import org.junit.jupiter.api.Test;
 
 import io.quarkus.test.TestTransaction;
@@ -16,7 +14,7 @@ public class PublisherRepositoryTest {
 
     @Test
     @TestTransaction
-    public void shouldCreateAndFindAnPublisher() throws SQLException {
+    public void shouldCreateAndFindAnPublisher() {
         Publisher publisher = new Publisher("name");
 
         Publisher.persist(publisher);

@@ -1,4 +1,4 @@
-import org.agoncal.qurkus.jpa.*;
+import org.agoncal.quarkus.jpa.*;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;

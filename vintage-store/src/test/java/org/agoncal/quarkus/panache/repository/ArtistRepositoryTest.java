@@ -3,10 +3,7 @@ package org.agoncal.quarkus.panache.repository;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import java.sql.SQLException;
-
 import org.agoncal.quarkus.jdbc.Artist;
-import org.agoncal.qurkus.panache.repository.ArtistRepository;
 import org.junit.jupiter.api.Test;
 
 import io.quarkus.test.TestTransaction;
@@ -21,7 +18,7 @@ public class ArtistRepositoryTest {
 
     @Test
     @TestTransaction
-    public void shouldCreateAndFindAnArtist() throws SQLException {
+    public void shouldCreateAndFindAnArtist() {
         Artist artist = new Artist("name", "bio");
         repository.persist(artist);
 

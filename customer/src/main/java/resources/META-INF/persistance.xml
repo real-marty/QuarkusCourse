@@ -1,0 +1,4 @@
+<persistence-unit name="myJpaUnit">
+    <class>org.agoncal.quarkus.jpa.Customer</class>
+    <!-- other configurations -->
+</persistence-unit>

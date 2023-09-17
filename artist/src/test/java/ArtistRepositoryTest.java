@@ -1,11 +1,10 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import java.sql.SQLException;
-
 import org.agoncal.quarkus.jdbc.Artist;
 import org.junit.jupiter.api.Test;
 
+import io.quarkus.test.TestTransaction;
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
 
@@ -16,10 +15,11 @@ public class ArtistRepositoryTest {
     ArtistRepository repository;
 
     @Test
-    public void shouldCreateAndFindAnArtist() throws SQLException {
+    @TestTransaction
+    public void shouldCreateAndFindAnArtist() {
         Artist artist = new Artist("name", "bio");
 
-        repository.persists(artist);
+        repository.persist(artist);
         assertNotNull(artist.getId());
 
         artist = repository.findById(artist.getId());

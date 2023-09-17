@@ -2,12 +2,19 @@ package org.agoncal.quarkus.jdbc;
 
 import java.time.Instant;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+@Entity
 public class Artist {
 
     // ======================================
     // = Attributes =
     // ======================================
 
+    @Id
+    @GeneratedValue
     private Long id;
     private String name;
     private String bio;
