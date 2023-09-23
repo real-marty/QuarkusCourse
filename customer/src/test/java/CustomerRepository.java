@@ -1,5 +1,6 @@
 import org.agoncal.quarkus.jpa.*;
 
+import io.quarkus.hibernate.orm.PersistenceUnit;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
@@ -8,7 +9,8 @@ import jakarta.persistence.EntityManager;
 public class CustomerRepository {
 
     @Inject
-    EntityManager em;
+    @PersistenceUnit("asset")
+    private EntityManager em;
 
     public void persist(Customer customer) {
         em.persist(customer);

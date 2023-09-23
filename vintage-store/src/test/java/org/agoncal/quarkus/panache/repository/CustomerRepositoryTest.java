@@ -21,7 +21,7 @@ public class CustomerRepositoryTest {
     @TestTransaction
     public void shouldCreateAndFindAnArtist() {
         Customer customer = new Customer("name", "surname", "mail@email.com");
-        System.out.println(customer);
+
         repository.persist(customer);
         assertNotNull(customer.getId());
 
